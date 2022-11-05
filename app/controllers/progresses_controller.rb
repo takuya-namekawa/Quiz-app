@@ -2,7 +2,9 @@ class ProgressesController < ApplicationController
 
   def new
     @progress = Progress.new
-    @question = Question.first #ここでは質問データを1件取得しています。
+    #@question = Question.first #ここでは質問データを1件取得しています。
+    current_game = Game.find(params[:game_id])
+    @question = Question.next_question(current_game)
   end
 
   def create
@@ -17,7 +19,7 @@ class ProgressesController < ApplicationController
   end
 
   private
-  
+
   def create_params
     params.require(:progress).permit(:question_id, :answer)
   end
