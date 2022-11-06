@@ -12,4 +12,12 @@ class Progress < ApplicationRecord
     end
     self.sequence = next_sequence
   end
+
+  def assign_sequence?
+    answer == "positive"
+  end
+
+  def negative_answer?
+    answer == "negative"
+  end
 end

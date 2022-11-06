@@ -15,6 +15,8 @@ class ProgressesController < ApplicationController
     progress.assign_sequence
     progress.save!
 
+    @extract_comics = ExtractionAlgorithm.new(current_game).compute
+
 #次の質問がなければ(すべての質問を出題したら)、ギブアップとします。
 #.blank?は空であるかを判定します。
 #「次の質問が空である」=「すべての質問を出題した」と位置づけてます。
