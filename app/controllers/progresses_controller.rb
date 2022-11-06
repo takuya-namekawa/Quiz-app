@@ -15,6 +15,22 @@ class ProgressesController < ApplicationController
     progress.assign_sequence
     progress.save!
 
+#次の質問がなければ(すべての質問を出題したら)、ギブアップとします。
+#.blank?は空であるかを判定します。
+#「次の質問が空である」=「すべての質問を出題した」と位置づけてます。
+#このif文の中にギブアップ時の処理を書きます。
+    next_question = Question.next_question(current_game)
+    if next_question.blank?
+#・statusを'finished'(終了)。
+#・resultを'incorrect'(不正解)。
+      current_game.status = "finished"
+      current_game.result = "incorrect"
+      current_game.save!
+#そのあとギブアップ画面へリダイレクトします。returnを呼び出すことでコントローラーの処理を終了させます。
+      redirect_to give_up_game_path(current_game)
+      return
+    end
+
     redirect_to new_game_progresses_path(current_game)
   end
 
