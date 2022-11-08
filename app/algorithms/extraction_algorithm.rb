@@ -6,7 +6,7 @@ class ExtractionAlgorithm
     @game = game
     @query = Comic.all
   end
-
+  
   def compute
     progresses = @game.progresses
     progresses.each do |progress|
@@ -30,8 +30,8 @@ class ExtractionAlgorithm
   end
 
   # ==========ここから追加する==========
-  private
-
+  private 
+  
   def serialization_end?(progress)
 
     if progress.positive_answer?
