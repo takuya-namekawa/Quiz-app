@@ -88,6 +88,16 @@ case ENV['SECTION']  #seedを実行する際にSECTION=○という引数に章�
       { content: '海賊が関係してますか？', algorithm: 'genre_match', eval_value: '海賊' }
     ]
 
+  when "6-1"
+    comics = [
+      { title: 'ワンピース ONE PIECE', genre: '少年漫画　海賊　冒険ファンタジー　バトル', serialization_started_year: 1997, serialization_end_year: nil, publisher: '週間少年ジャンプ'},
+      { title: 'ゴルゴ13', genre: 'ハードボイルド　劇画', serialization_started_year: 1968, serialization_end_year: nil, publisher: 'ビックコミック'},
+    ]
+
+    questions = [
+      { content: '連載は週間少年ジャンプ?', algorithm: 'publisher_match', eval_value: '週間少年ジャンプ' }
+    ]
+
 end
 
 if comics.present?  #present?は、Rubyの真偽判定の1つで、オブジェクトに値が格納されているかを評価するときに使用します。
