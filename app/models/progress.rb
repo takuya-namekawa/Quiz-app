@@ -20,6 +20,7 @@ class Progress < ApplicationRecord
   end
 
   def negative_answer?
+
     answer == 'negative'
   end
 end
