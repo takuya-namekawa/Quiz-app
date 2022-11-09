@@ -70,13 +70,23 @@ case ENV['SECTION']  #seedを実行する際にSECTION=○という引数に章�
   when "4-5"
     comics = [
       { title: 'ワンピース ONE PIECE', genre: '少年漫画　海賊　冒険ファンタジー　バトル', serialization_started_year: 1997, serialization_end_year: nil, publisher: '週間少年ジャンプ' },
-      { title: 'ゴルゴ13', genre: 'ハードボイルド　漫画', serialization_started_year: 1968, serialization_end_year: nil, publisher: 'ビックコミック'},
-      ]
+      { title: 'ゴルゴ13', genre: 'ハードボイルド　劇画', serialization_started_year: 1968, serialization_end_year: nil, publisher: 'ビックコミック'},
+    ]
 
     questions = [
       { content: '連載終了していますか？', algorithm: 'serialization_end', eval_value: nil },
       { content: '連載は週間少年ジャンプ?', algorithm: 'publisher_match', eval_value: '週間少年ジャンプ' },
+    ]
+
+  when "5-1"
+    comics = [
+      { title: 'ワンピース ONE PIECE' , genre: '少年漫画　海賊　冒険ファンタジー　バトル', serialization_started_year: 1997, serialization_end_year: nil, publisher: '週間少年ジャンプ' },
+      { title: 'ゴルゴ13', genre: 'ハードボイルド　劇画', serialization_started_year: 1968, serialization_end_year: nil, publisher: 'ビックコミック' },
       ]
+
+    questions = [
+      { content: '海賊が関係していますか?', algorithm: 'genre_match' , eval_value: '海賊' }
+    ]
 
 end
 
