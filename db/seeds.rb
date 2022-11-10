@@ -98,6 +98,32 @@ case ENV['SECTION']  #seedを実行する際にSECTION=○という引数に章�
       { content: '連載は週間少年ジャンプ?', algorithm: 'publisher_match', eval_value: '週間少年ジャンプ' }
     ]
 
+  when "7"
+    questions = [
+      { content: '連載は終了していますか?', algorithm: 'serialization_end', eval_value: nil },
+      { content: '連載は週間少年ジャンプ?', algorithm: 'publisher_match', eval_value: '週間少年ジャンプ' },
+      { content: '連載は週間少年サンデー?', algorithm: 'publisher_match', eval_value: '週間少年サンデー' },
+      { content: '連載は週間少年マガジン?', algorithm: 'publisher_match', eval_value: '週間少年マガジン' },
+      { content: '少年漫画?', algorithm: 'genre_match', eval_value: '少年漫画' },
+      { content: '時代劇?', algorithm: 'genre_match', eval_value: '時代劇' },
+      { content: 'ファンタジー?', algorithm: 'genre_match', eval_value: 'ファンタジー' },
+      { content: 'SF?', algorithm: 'genre_match', eval_value: 'SF' },
+      { content: 'バトルシーンがありますか?', algorithm: 'genre_match', eval_value: 'バトル' },
+      { content: '主人公は推理しますか?', algorithm: 'genre_match', eval_value: '推理'  },
+      { content: 'ダークな世界観がある漫画ですか?',algorithm: 'genre_match', eval_value: 'ダーク' },
+      { content: 'サッカーしますか?', algorithm: 'genre_match', eval_value: 'サッカー' },
+      { content: 'バスケ漫画ですか?', algorithm: 'genre_match', eval_value: 'バスケットボール' },
+      { content: 'グルメ漫画ですか?', algorithm: 'genre_match', eval_value: 'グルメ' },
+      { content: 'ギャグ要素がありますか?',algorithm: 'genre_match', eval_value: 'ギャグ' },
+      { content: '剣で戦いますか?', algorithm: 'genre_match', eval_value: '剣' },
+      { content: '家庭的ですか?', algorithm: 'genre_match', eval_value: '家庭' },
+      { content: 'スポーツ系ですか?', algorithm: 'genre_match', eval_value: 'スポーツ' },
+      { content: 'ハードボイルドですか?', algorithm: 'genre_match', eval_value: 'ハードボイルド' },
+      { content: '舞台は中国ですか?', algorithm: 'genre_match', eval_value: '中国' },
+      { content: '学園ものですか?', algorithm: 'genre_match', eval_value: '学園' },
+      { content: '海賊が関係していますか?', algorithm: 'genre_match', eval_value: '海賊' }
+    ]
+
 end
 
 if comics.present?  #present?は、Rubyの真偽判定の1つで、オブジェクトに値が格納されているかを評価するときに使用します。
